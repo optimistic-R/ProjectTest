@@ -1,4 +1,3 @@
-//アプリの基本設定
 {
   "expo": {
     "name": "LaboSpace",
@@ -26,6 +25,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
