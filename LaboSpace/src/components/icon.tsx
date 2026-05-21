@@ -6,21 +6,21 @@ import fontSelection from "../../assets/fonts/selection.json";
 
 const CustomIcon = createIconSetFromIcoMoon(
     fontSelection,
-<<<<<<< HEAD
     'IcoMoon',
-=======
-    'iconMoon',
->>>>>>> 537e8883c46f2bff300793a71fc589542d22caca
     'icomoon.ttf'
 )
 
-const Icon = () =>{
+interface Props {
+    name: string;
+    size: number;
+    color: string;
+}
+
+const Icon = (props : Props) =>{
+    const { name, size, color } = props;
+    
     const [fontLoaded] = useFonts({
-<<<<<<< HEAD
         'IcoMoon': fontData
-=======
-        'icomoon': fontData
->>>>>>> 537e8883c46f2bff300793a71fc589542d22caca
     });
 
     if(!fontLoaded){
@@ -28,11 +28,7 @@ const Icon = () =>{
     }
 
     return(
-<<<<<<< HEAD
-        <CustomIcon name='plus' size={40} color='red'/>
-=======
-        <CustomIcon name='plus' size={40} color={'red'}/>
->>>>>>> 537e8883c46f2bff300793a71fc589542d22caca
+        <CustomIcon name={name} size={size} color={color}/>
     )
 }
 
