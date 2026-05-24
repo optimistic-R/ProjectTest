@@ -6,13 +6,13 @@ import Header from "../../components/Header";
 import CircleButton from "../../components/CircleBtton";
 import Icon from "../../components/Icon";
 
-const Edit = ()=> {
+const Create = ()=> {
     return(
         <KeyboardAvoidingView behavior="height" style={styles.container}>
             <Header />
 
             <View style={styles.InputContainer}>
-                <TextInput multiline style={styles.Input} value={"買い物\nリスト"} /> {/* multilineは複数行入力を可能にするプロパティ */}
+                <TextInput multiline style={styles.Input} value="" /> {/* multilineは複数行入力を可能にするプロパティ */}
             </View>
 
             <CircleButton>
@@ -40,4 +40,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Edit
+export default Create
