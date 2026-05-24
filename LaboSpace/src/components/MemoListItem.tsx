@@ -1,18 +1,21 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { Link } from "expo-router";
 
 import Icon from "./Icon";
 
 const MemoListItem = () => {
     return(
-        <View style={styles.memoListItem}>{/*//memoItemの構造化*/}
-            <View>
-                <Text style={styles.memoListItemTitle}>買い物リスト</Text>
-                <Text style={styles.memoListItemDate}>2026/03/22/11:00</Text>
-            </View>
-            <TouchableOpacity>{/*//削除ボタンの構造化*/}
-                <Icon name="delete" size={32} color="#B0B0B0" />
+        <Link href="/memo/detail" asChild>
+            <TouchableOpacity style={styles.memoListItem}>{/*//memoItemの構造化*/}
+                <View>
+                    <Text style={styles.memoListItemTitle}>買い物リスト</Text>
+                    <Text style={styles.memoListItemDate}>2026/03/22/11:00</Text>
+                </View>
+                <TouchableOpacity>{/*//削除ボタンの構造化*/}
+                    <Icon name="delete" size={32} color="#B0B0B0" />
+                </TouchableOpacity>
             </TouchableOpacity>
-        </View>
+        </Link>
     )
 }
 
