@@ -1,6 +1,19 @@
 //特殊なファイル(テンプレート)
-import { Slot } from 'expo-router';
+import { Stack } from 'expo-router';
 
-export default function Layout() {
-  return <Slot />; //受け取った画面をそのまま表示する
+const Layout = () => {
+  return <Stack screenOptions={{
+    headerStyle:{
+      backgroundColor: '#467FD3',
+    },
+    headerTintColor: '#ffffff',
+    headerTitle: "LaboSpace",
+    headerBackTitle: "Back",
+    headerTitleStyle: {
+      fontSize: 22,
+      fontWeight: 'bold',
+    },
+  }} />; //受け取った画面をそのまま表示する
 }
+
+export default Layout;
