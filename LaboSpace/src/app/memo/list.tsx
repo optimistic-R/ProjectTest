@@ -3,7 +3,7 @@ import { View,Text,StyleSheet } from "react-native";
 import Header from "../../components/Header";
 import MemoListItem from "../../components/MemoListItem";
 import CircleButton from "../../components/CircleBtton";
-import Icon from "../../components/icon";
+import Icon from "../../components/Icon";
 
 const List = () => {
     return (
