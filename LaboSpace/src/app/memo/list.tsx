@@ -1,15 +1,25 @@
-import { View,Text,StyleSheet } from "react-native";
-import { router } from "expo-router";
+import { View,Text,StyleSheet } from "react-native"
+import { router, useNavigation } from "expo-router"
+import { useEffect } from "react"
 
-import MemoListItem from "../../components/MemoListItem";
-import CircleButton from "../../components/CircleBtton";
-import Icon from "../../components/Icon";
+import MemoListItem from "../../components/MemoListItem"
+import CircleButton from "../../components/CircleBtton"
+import Icon from "../../components/Icon"
+import LogOutButton from "../../components/LogOutButton"
 
 const handlePress = (): void => {
-    router.push("/memo/create");
+    router.push("/memo/create")
 }
 
 const List = () => {
+    const navigation = useNavigation()
+
+    useEffect(() => {
+        navigation.setOptions({
+            headerRight: () => { return <LogOutButton /> }
+        })
+    }, []) //画面が表示されたときに一度だけ実行される
+
     return (
         <View style={styles.container}>{/*//全体のフレーム*/}
             <View>{/*//memoListの大枠*/}

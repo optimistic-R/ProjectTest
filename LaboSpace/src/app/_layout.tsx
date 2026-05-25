@@ -9,6 +9,7 @@ const Layout = () => {
     headerTintColor: '#ffffff',
     headerTitle: "LaboSpace",
     headerBackTitle: "Back",
+    headerTitleAlign: 'center',
     headerTitleStyle: {
       fontSize: 22,
       fontWeight: 'bold',

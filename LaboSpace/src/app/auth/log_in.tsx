@@ -8,7 +8,7 @@ import Button from "../../components/Button";
 {/* この関数は何も返さないのでvoid */}
 const handlePress = (): void => {
     //ログイン
-    router.push("/memo/list");
+    router.replace("/memo/list");
 }
 
 const LogIn = ()=> {
