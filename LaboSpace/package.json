@@ -2,11 +2,14 @@
   "name": "labospace",
   "version": "1.0.0",
   "main": "expo-router/entry",
+  "homepage": "https://optimistic-R.io",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "predeploy": "npx expo export --platform web",
+    "deploy": "gh-pages -d dist" 
   },
   "dependencies": {
     "@expo/metro-config": "~54.0.14",
@@ -32,6 +35,7 @@
     "@types/react": "~19.1.0",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.37.5",
+    "gh-pages": "^6.3.0",
     "globals": "^17.4.0",
     "jiti": "^2.6.1",
     "typescript": "~5.9.2",
