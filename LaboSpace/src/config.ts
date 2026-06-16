@@ -1,7 +1,11 @@
 import { initializeApp } from "firebase/app"
-import { initializeAuth, getReactNativePersistence } from "firebase/auth"
+import {
+  initializeAuth,
+  getAuth,
+  getReactNativePersistence,
+} from "firebase/auth"
 import { getFirestore } from "firebase/firestore"
-import ReactNativeAsyncStorage from "@react-native-async-storage/async-storage"
+import { Platform } from "react-native"
 
 declare const process: {
   env: { [key: string]: string | undefined }
@@ -13,13 +17,17 @@ const firebaseConfig = {
   projectId: process.env.EXPO_PUBLIC_FB_PROJECT_ID,
   storageBucket: process.env.EXPO_PUBLIC_FB_STORAGE_BUCKET,
   messagingSenderId: process.env.EXPO_PUBLIC_FB_MESSAGING_SENDER_ID,
-  appId: process.env.EXPO_PUBLIC_FB_APP_ID
+  appId: process.env.EXPO_PUBLIC_FB_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig)
-const auth = initializeAuth(app, {
-    persistence: getReactNativePersistence(ReactNativeAsyncStorage)
-})
+const auth = Platform.OS === "web"
+  ? getAuth(app)
+  : initializeAuth(app, {
+      persistence: getReactNativePersistence(
+        require("@react-native-async-storage/async-storage").default
+      ),
+    })
 const db = getFirestore(app)
 
 export { app, auth, db }

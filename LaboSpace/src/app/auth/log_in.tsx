@@ -9,12 +9,12 @@ import Button from "../../components/Button";
 {/* この関数は何も返さないのでvoid */}
 const handlePress = (): void => {
     //ログイン
-    router.replace("/memo/list");
+    router.replace("/memo/list")
 }
 
 const LogIn = ()=> {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
     return(
         <View style={styles.container}>
 
@@ -41,7 +41,7 @@ const LogIn = ()=> {
                 <Button label="Submit" onPress={handlePress} />
                 <View style={styles.footer}>
                     <Text style={styles.footerText}>Not registered?</Text>
-                    <Link href="/auth/sign_up" asChild>
+                    <Link href="/auth/sign_up" asChild replace>
                         <TouchableOpacity>
                             <Text style={styles.footerLink}>Sign up here!</Text>
                         </TouchableOpacity>
